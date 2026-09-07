@@ -1,4 +1,4 @@
-module github.com/lox/notion-cli
+module github.com/miguelpalomera/notion-cli
 
 go 1.25.6
 

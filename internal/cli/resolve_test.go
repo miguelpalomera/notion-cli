@@ -3,7 +3,7 @@ package cli
 import (
 	"testing"
 
-	"github.com/lox/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
 )
 
 func TestParsePageRef(t *testing.T) {

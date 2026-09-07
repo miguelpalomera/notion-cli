@@ -4,9 +4,9 @@ import (
 	"os"
 
 	"github.com/alecthomas/kong"
-	"github.com/lox/notion-cli/cmd"
-	"github.com/lox/notion-cli/internal/cli"
-	"github.com/lox/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/cmd"
+	"github.com/miguelpalomera/notion-cli/internal/cli"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 var version = "dev"

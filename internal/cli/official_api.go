@@ -3,8 +3,8 @@ package cli
 import (
 	"fmt"
 
-	"github.com/lox/notion-cli/internal/api"
-	"github.com/lox/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/api"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 type OfficialAPIConfig struct {

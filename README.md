@@ -9,20 +9,36 @@ Inspired by [linear-cli](https://github.com/schpet/linear-cli) - stay in the ter
 
 **Works great with AI agents** — includes a [skill](#skills) that lets agents search, create, and manage your Notion workspace alongside your code.
 
+> **This is a fork** of [lox/notion-cli](https://github.com/lox/notion-cli) that adds a
+> generic [`tools call`](#calling-any-mcp-tool) command for invoking any Notion MCP
+> tool by name (e.g. `notion-query-data-sources`), plus `--json` input schemas in
+> `tools list`. Everything else is upstream.
+
 ## Installation
 
-### From Source
+### As a dependency (install the pinned binary)
+
+Install the CLI straight from this repository — this is the recommended way to
+depend on it from another project's tooling, scripts, or CI:
 
 ```bash
-go install github.com/lox/notion-cli@latest
+# latest from the default branch
+go install github.com/miguelpalomera/notion-cli@latest
+
+# or pin an exact tag / commit for reproducible builds (recommended for CI)
+go install github.com/miguelpalomera/notion-cli@v0.1.0
+go install github.com/miguelpalomera/notion-cli@<commit-sha>
 ```
+
+This drops a `notion-cli` binary in `$(go env GOPATH)/bin` (put that on your `PATH`).
+Requires Go 1.22+. In CI, run the same `go install …@<tag>` step before invoking `notion-cli`.
 
 ### Build Locally
 
 ```bash
-git clone https://github.com/lox/notion-cli
+git clone https://github.com/miguelpalomera/notion-cli
 cd notion-cli
-mise run build
+mise run build     # or: go build -o notion-cli .
 ```
 
 ## Quick Start
@@ -161,12 +177,36 @@ The comment commands accept a page URL, ID, or name. `comment list` includes bot
 
 ```bash
 notion-cli tools                               # List available MCP tools
-notion-cli tools --json                        # Output tools as JSON
+notion-cli tools --json                        # Output tools as JSON (includes each tool's inputSchema)
 notion-cli version                             # Show version
 notion-cli --version                           # Alias for version
 notion-cli -v                                  # Short alias for version
 notion-cli --help                              # Show help
 ```
+
+### Calling any MCP tool
+
+`tools call` is a generic escape hatch: it invokes **any** Notion MCP tool by name with
+a JSON argument object, so you can reach capabilities that have no dedicated subcommand
+(for example querying a data source's rows). Discover tool names and their argument
+schemas with `notion-cli tools --json`.
+
+```bash
+# arguments inline as a JSON object
+notion-cli tools call notion-fetch --args '{"id":"<page-or-db-id>"}'
+
+# arguments from a file, or from stdin with "-"
+notion-cli tools call notion-query-data-sources --args-file ./query.json
+echo '{"data":{"mode":"sql","data_source_urls":["collection://<id>"],"query":"SELECT * FROM \"collection://<id>\" LIMIT 5"}}' \
+  | notion-cli tools call notion-query-data-sources -f -
+
+# --raw prints the full tool result (all content blocks + isError) as JSON;
+# the default prints just the text content
+notion-cli tools call notion-fetch --args '{"id":"<id>"}' --raw
+```
+
+By default the command prints the tool's text content and exits non-zero if the tool
+reports an error. Use `--raw`/`-r` when you need the structured result.
 
 ## Configuration
 

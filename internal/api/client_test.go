@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lox/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 func TestGetSelf(t *testing.T) {

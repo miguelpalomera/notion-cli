@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lox/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 func captureStdout(t *testing.T, fn func()) string {

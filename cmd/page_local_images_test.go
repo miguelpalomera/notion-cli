@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lox/notion-cli/internal/api"
-	"github.com/lox/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/api"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
 )
 
 type fakePageUpdater struct {

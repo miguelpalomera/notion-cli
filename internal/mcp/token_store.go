@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/lox/notion-cli/internal/config"
 	"github.com/mark3labs/mcp-go/client/transport"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 var ErrNoToken = errors.New("no token available")
