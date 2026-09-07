@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lox/notion-cli/internal/config"
-	"github.com/lox/notion-cli/internal/mcp"
 	"github.com/mark3labs/mcp-go/client/transport"
+	"github.com/miguelpalomera/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
 )
 
 func isolateAuthConfig(t *testing.T) {

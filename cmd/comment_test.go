@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/lox/notion-cli/internal/mcp"
-	"github.com/lox/notion-cli/internal/output"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/output"
 )
 
 func TestBuildCommentListRequest(t *testing.T) {

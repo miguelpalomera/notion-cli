@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lox/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/config"
 )
 
 const defaultHTTPTimeout = 20 * time.Second

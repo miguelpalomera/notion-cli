@@ -12,10 +12,10 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/lox/notion-cli/internal/cli"
-	"github.com/lox/notion-cli/internal/config"
-	"github.com/lox/notion-cli/internal/mcp"
-	"github.com/lox/notion-cli/internal/output"
+	"github.com/miguelpalomera/notion-cli/internal/cli"
+	"github.com/miguelpalomera/notion-cli/internal/config"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/output"
 	"golang.org/x/term"
 )
 

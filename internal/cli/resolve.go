@@ -7,8 +7,8 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/lox/notion-cli/internal/mcp"
-	"github.com/lox/notion-cli/internal/output"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/output"
 )
 
 type PageRefKind int

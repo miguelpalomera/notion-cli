@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lox/notion-cli/internal/cli"
-	"github.com/lox/notion-cli/internal/mcp"
+	"github.com/miguelpalomera/notion-cli/internal/cli"
+	"github.com/miguelpalomera/notion-cli/internal/mcp"
 )
 
 func TestBuildPageEditRequestReplace(t *testing.T) {

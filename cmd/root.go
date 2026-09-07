@@ -1,6 +1,6 @@
 package cmd
 
-import "github.com/lox/notion-cli/internal/config"
+import "github.com/miguelpalomera/notion-cli/internal/config"
 
 type Context struct {
 	Profile          string
